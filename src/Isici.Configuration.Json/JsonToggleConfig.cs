@@ -57,7 +57,6 @@ namespace Isici.Configuration.JsonFileConfiguration
         /// The dependencies.
         /// </value>
         [JsonProperty("dependencies")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "<Pending>")]
         public string[] Dependencies { get; set; }
     }
 }
