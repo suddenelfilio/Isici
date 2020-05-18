@@ -20,11 +20,11 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: "Build Library"
   inputs:
     command: 'build'
+    arguments: '--configuration $(buildConfiguration)'
     projects: $(project)
-    configuration: $(buildConfiguration)
-
 
 - task: DotNetCoreCLI@2
   displayName: "Pack library"
