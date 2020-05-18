@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
     paths: 'src/Isici.Configuration.SystemConfiguration/**'
-
+    
 jobs:
   build:
     runs-on: ubuntu-latest
