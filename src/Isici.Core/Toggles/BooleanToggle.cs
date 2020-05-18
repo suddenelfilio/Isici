@@ -1,7 +1,7 @@
+﻿/*
 The MIT License
 
-Original source: Swticheroo - Copyright (c) 2013 Riaan Hanekom
-Isici version: Copyright (c) 2020 Filip Stas
+Copyright (c) 2013 Riaan Hanekom
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,3 +20,27 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+*/
+
+namespace Switcheroo.Core.Toggles
+{
+    /// <summary>
+    /// A simple bit feature toggle that switches values between <c>true</c> and <c>false</c>.
+    /// </summary>
+    public class BooleanToggle : StaticFeatureToggleBase
+    {
+        #region Construction
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BooleanToggle" /> class.
+        /// </summary>
+        /// <param name="name">The name of the feature toggle.</param>
+        /// <param name="enabled">if set to <c>true</c> enable the feature, else disable it.</param>
+        /// <exception cref="System.ArgumentNullException">If name is <c>null</c>.</exception>
+        public BooleanToggle(string name, bool enabled) : base(name, enabled)
+        {
+        }
+
+        #endregion
+    }
+}

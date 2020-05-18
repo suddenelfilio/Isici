@@ -1,17 +1,17 @@
-Switcheroo
+Isici - successor of Switcheroo
 ==========
 
 A lightweight framework for [feature toggling](http://martinfowler.com/bliki/FeatureToggle.html) to enable trunk based development.
 
-Switcheroo aims for simplicity, with a clean syntax and a minimal feature set while not compromising on extensibility and testability.
+Isici aims for simplicity, with a clean syntax and a minimal feature set while not compromising on extensibility and testability.
 
-Getting Switcheroo
+Getting Isici
 ------------------
 
-Switcheroo can be installed via [Nuget](http://nuget.org/packages/Switcheroo).
+Switcheroo can be installed via [Nuget](http://nuget.org/packages/Isici.Core).
 
 ```powershell
-> Install-Package Switcheroo 
+> Install-Package Isici.Core 
 ```
 
 License
@@ -25,14 +25,14 @@ Quick Start
 
 **Installation**
 
-Nuget packages can be found [here](https://www.nuget.org/packages/Switcheroo).
+Nuget packages can be found [here](https://www.nuget.org/packages/Isici.Core).
 
 **Add configuration**
 
 ```xml
 <configuration>
   <configSections>
-    <section name="features" type="Switcheroo.Configuration.FeatureToggleConfiguration, Switcheroo"/>
+    <section name="features" type="Isici.Configuration.FeatureToggleConfiguration, Isici.Configuration.SystemConfiguration"/>
   </configSections>
   <features>
     <toggles>
@@ -180,38 +180,3 @@ Until         11/21/2012 3:32:23 PM
 ```
 
 **Loading from custom configuration resources :  build on top of _IConfigurationReader_**
-
-Version History
----------------
-**0.3.4753.37554**
-
-- Removed MutableToggle
-- Added the ability to "freeze" a toggle configuration.
-- Validation of toggle state (including cycles in dependencies) now occur on addition to the feature configuration container.
-
-**0.3.4749.36197**
-
-- Mechanism for detecting dependency cycles.  This feature is only active when configuring dependencies via application configuration.
-- Fixed bug where a DependencyToggle depending on another DependencyToggle might cause duplicate toggles to be added to the feature set. 
-
-**v0.3.4748.37146**
-
-- Configuration mechanism for DependencyToggle
-
-**v0.2.4730.37739**
-
-- Added DependencyToggle.
-- Changed from a Dictionary to a ConcurrentDictionary.
-
-**v0.2.4705.37094**
-
-- Added Established features.
-
-**v0.1.4705.28808**
-
-- Added DateRange toggle.
-- Quite a bit of internal refactoring.	
-
-**v0.1.4704.41742**
-
-- Initial version : simple toggles.
