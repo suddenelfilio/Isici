@@ -69,6 +69,7 @@ namespace Isici.Core.Abstractions
         /// Initializes the this configuration using the specified configuration action.
         /// </summary>
         /// <param name="configuration">The source of configuration.</param>
+        /// <param name="configurationReader">The configuration reader.</param>
         void Initialize(Action<IConfigurationExpression> configuration, IConfigurationReader configurationReader);
 
         /// <summary>
