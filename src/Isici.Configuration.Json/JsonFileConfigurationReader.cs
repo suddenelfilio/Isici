@@ -26,10 +26,10 @@ namespace Isici.Configuration.JsonFileConfiguration
                 string fileContents = File.ReadAllText(_jsonFile);
                 if (!string.IsNullOrEmpty(fileContents))
                 {
-                    JsonToggleConfig[] jsontoggles = JsonConvert.DeserializeObject<JsonToggleConfig[]>(fileContents);
+                    JsonToggleConfig[] jsonToggles = JsonConvert.DeserializeObject<JsonToggleConfig[]>(fileContents);
 
                     Dictionary<string, KeyValuePair<JsonToggleConfig, IFeatureToggle>> toggles =
-                        jsontoggles
+                        jsonToggles
                             .ToDictionary(x => x.Name, x => new KeyValuePair<JsonToggleConfig, IFeatureToggle>(x, ConvertToFeatureToggle(x)));
                     return BuildDependencies(toggles).ToList();
                 }
