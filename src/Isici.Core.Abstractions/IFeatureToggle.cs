@@ -64,6 +64,6 @@ namespace Isici.Core.Abstractions
         /// <value>
         ///   <c>true</c> if this instance is frozen; otherwise, <c>false</c>.
         /// </value>
-        bool IsFrozen { get; }
+        bool IsFrozen { get; }  
     }
 }
