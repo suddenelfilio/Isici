@@ -60,18 +60,7 @@ jobs:
         dotnet-version: 3.1.101
     - name: Install dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj --configuration Release --no-restore
-    
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup Nuget
-        uses: nuget/setup-nuget@v1 
-      - uses: actions/checkout@v1
-      - name: Pack Package
-        run: dotnet pack --configuration Release --no-build
-      
-      - name: Push package
-        run: dotnet nuget push src\Isici.Core.Abstractions\**\*.nupkg --api-key ${{ secrets.NUGET_API_KEY }}
+    - name: Pack Package
+      run: dotnet pack src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj -p:PackageVersion=${{SemVer}} --configuration Release 
+    - name: Push package
+      run: dotnet nuget push src\Isici.Core.Abstractions\**\*.nupkg --api-key ${{ secrets.NUGET_API_KEY }}
