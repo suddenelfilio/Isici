@@ -12,18 +12,18 @@ namespace Isici.Configuration.JsonFileConfiguration
     public class JsonFileConfigurationReader : IConfigurationReader
     {
 
-        private readonly string _jsonFile;
+        private readonly string jsonFile;
 
         public JsonFileConfigurationReader(string jsonFile)
         {
-            _jsonFile = jsonFile;
+            this.jsonFile = jsonFile;
         }
 
         public IEnumerable<IFeatureToggle> GetFeatures()
         {
-            if (File.Exists(_jsonFile))
+            if (File.Exists(jsonFile))
             {
-                string fileContents = File.ReadAllText(_jsonFile);
+                string fileContents = File.ReadAllText(jsonFile);
                 if (!string.IsNullOrEmpty(fileContents))
                 {
                     JsonToggleConfig[] jsonToggles = JsonConvert.DeserializeObject<JsonToggleConfig[]>(fileContents);
