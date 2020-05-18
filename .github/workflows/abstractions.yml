@@ -22,4 +22,4 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --project ./src/Isici.Core.Abstractions --configuration Release --no-restore
+      run: dotnet build --project ./src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj --configuration Release --no-restore
