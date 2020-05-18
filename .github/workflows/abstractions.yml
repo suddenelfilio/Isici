@@ -4,9 +4,6 @@ on:
   push:
     branches: [ master ]
     paths: 'src/Isici.Core.Abstractions/**'
-  pull_request:
-    branches: [ master ]
-    paths: 'src/Isici.Core.Abstractions/**'
 
 jobs:
   build:

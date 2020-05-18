@@ -51,12 +51,12 @@ namespace Isici.Core.Toggles
         {
             if (featureConfiguration == null)
             {
-                throw new ArgumentNullException("featureConfiguration");
+                throw new ArgumentNullException(nameof(featureConfiguration));
             }
 
             if (toggleName == null)
             {
-                throw new ArgumentNullException("toggleName");
+                throw new ArgumentNullException(nameof(toggleName));
             }
 
             this.featureConfiguration = featureConfiguration;
