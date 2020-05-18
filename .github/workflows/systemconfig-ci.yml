@@ -1,4 +1,4 @@
-name: .NET Core
+name: Isici SystemConfig CI
 
 on:
   pull_request:

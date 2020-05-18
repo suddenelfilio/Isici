@@ -1,4 +1,4 @@
-name: Isici.Core.Abstractions Build
+name: Isici.Core.Abstractions CI
 
 on:
   pull_request:

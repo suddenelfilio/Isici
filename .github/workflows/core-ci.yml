@@ -1,5 +1,4 @@
-name: .NET Core
-
+name: Isici Core CI
 on:
   pull_request:
     branches: [ master ]
