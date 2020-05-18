@@ -3,7 +3,7 @@ name: Isici.Core.Abstractions Build
 on:
   push:
     branches: [ master ]
-    paths: src/Isici.Core.Abstractions
+    paths: 'src/Isici.Core.Abstractions/**'
   pull_request:
     branches: [ master ]
     paths: 'src/Isici.Core.Abstractions/**'
