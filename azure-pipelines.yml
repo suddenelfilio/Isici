@@ -12,9 +12,9 @@ trigger:
     - src/Isici.Core.Abstractions
 
 stages:
-- stage: Abstractions Build
+- stage: Abstractions
   jobs:
-  - job: Abstractions
+  - job: Build
     pool:
       vmImage: 'ubuntu-latest'
 
