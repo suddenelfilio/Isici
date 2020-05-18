@@ -23,6 +23,10 @@ jobs:
     - name: Use GitVersion
       id: gitversion # step id used as reference for output values
       uses: gittools/actions/gitversion/execute@v0.9.2
+      with:
+        updateAssemblyInfo: true
+        useConfigFile: true
+        configFilePath: 'src/Isici.Core.Abstractions/GitVersion.yml'
     - run: |
         echo "Major: ${{ steps.gitversion.outputs.major }}"
         echo "Minor: ${{ steps.gitversion.outputs.minor }}"
