@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-namespace Switcheroo.Core.Toggles
+namespace Isici.Core.Toggles
 {
     /// <summary>
     /// A toggle that represents an established feature for which there should be 

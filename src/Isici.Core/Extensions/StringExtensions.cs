@@ -1,7 +1,9 @@
 ﻿/*
 The MIT License
 
-Copyright (c) 2013 Riaan Hanekom
+Original source: Swticheroo - Copyright (c) 2013 Riaan Hanekom
+Isici version: Copyright (c) 2020 Filip Stas
+
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-namespace Switcheroo.Core.Extensions
+namespace Isici.Core.Extensions
 {
     /// <summary>
     /// Extension methods on <see cref="System.String"/>.

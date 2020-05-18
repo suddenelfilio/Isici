@@ -24,8 +24,10 @@ THE SOFTWARE.
 
 using System;
 using System.Collections.Generic;
+using Isici.Core.Abstractions;
+using Isici.Core.Abstractions.Configuration;
 
-namespace Isici.Configuration.SystemConfiguration
+namespace Isici.Core
 {
     /// <summary>
     /// A concrete implementation of a <see cref="IConfigurationExpression"/>.
@@ -35,38 +37,31 @@ namespace Isici.Configuration.SystemConfiguration
         #region Globals
 
         private readonly IFeatureConfiguration configuration;
-        private readonly IConfigurationReader applicationConfigurationReader;
+        private readonly IConfigurationReader configurationReader;
 
         #endregion
 
         #region Construction
 
+      
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationExpression" /> class.
         /// </summary>
         /// <param name="configuration">The configuration object to apply the initialization on.</param>
-        public ConfigurationExpression(IFeatureConfiguration configuration) : this(configuration, new ApplicationConfigurationReader())
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationExpression" /> class.
-        /// </summary>
-        /// <param name="configuration">The configuration object to apply the initialization on.</param>
-        /// <param name="applicationConfigurationReader">The application configuration reader.</param>
-        internal ConfigurationExpression(IFeatureConfiguration configuration, IConfigurationReader applicationConfigurationReader)
+        /// <param name="configurationReader">The application configuration reader.</param>
+        internal ConfigurationExpression(IFeatureConfiguration configuration, IConfigurationReader configurationReader)
         {
             this.configuration = configuration;
-            this.applicationConfigurationReader = applicationConfigurationReader;
+            this.configurationReader = configurationReader;
         }
 
         #endregion
 
         #region IConfigurationExpression Members
 
-        public void FromApplicationConfig()
+        public void FromConfig()
         {
-            IEnumerable<IFeatureToggle> items = applicationConfigurationReader.GetFeatures();
+            IEnumerable<IFeatureToggle> items = configurationReader.GetFeatures();
             AddItems(items);
         }
 
@@ -79,7 +74,7 @@ namespace Isici.Configuration.SystemConfiguration
         {
             if (reader == null)
             {
-                throw new ArgumentNullException("reader");
+                throw new ArgumentNullException(nameof(reader));
             }
 
             IEnumerable<IFeatureToggle> items = reader.GetFeatures();

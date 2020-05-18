@@ -3,23 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{CDB68AD0-D852-49DB-8A28-C12714E35010}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E5A9312-1AA6-4FE6-91D6-07FB287C6241}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isici.Samples", "src\Isici.Samples\Isici.Samples.csproj", "{85394CBA-ABF1-4AF1-B581-1B5C5E8B3D91}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isici.Core.Abstractions", "src\Isici.Core.Abstractions\Isici.Core.Abstractions.csproj", "{1887CAC4-DCFD-4D7A-AF56-6C6A63C5CBD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isici.Core", "src\Isici.Core\Isici.Core.csproj", "{B5592E32-9DB1-46B4-857E-88D45F5E2F9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isici.Core", "src\Isici.Core\Isici.Core.csproj", "{B5592E32-9DB1-46B4-857E-88D45F5E2F9B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isici.Configuration.SystemConfiguration", "src\Isici.Configuration.SystemConfiguration\Isici.Configuration.SystemConfiguration.csproj", "{CEAD9520-F519-4CC8-82AD-F60B2A94C9BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isici.Configuration.JsonFileConfiguration", "src\Isici.Configuration.Json\Isici.Configuration.JsonFileConfiguration.csproj", "{63A9E584-9DB6-49C5-9287-082F68BD0B1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isici.Configuration.JsonFileConfiguration", "src\Isici.Configuration.Json\Isici.Configuration.JsonFileConfiguration.csproj", "{63A9E584-9DB6-49C5-9287-082F68BD0B1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{85394CBA-ABF1-4AF1-B581-1B5C5E8B3D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85394CBA-ABF1-4AF1-B581-1B5C5E8B3D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85394CBA-ABF1-4AF1-B581-1B5C5E8B3D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85394CBA-ABF1-4AF1-B581-1B5C5E8B3D91}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1887CAC4-DCFD-4D7A-AF56-6C6A63C5CBD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1887CAC4-DCFD-4D7A-AF56-6C6A63C5CBD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1887CAC4-DCFD-4D7A-AF56-6C6A63C5CBD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,9 +42,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{85394CBA-ABF1-4AF1-B581-1B5C5E8B3D91} = {CDB68AD0-D852-49DB-8A28-C12714E35010}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {526550E8-9F4D-4E3E-8ECE-ED451A7C40D9}

@@ -1,7 +1,9 @@
 ﻿/*
 The MIT License
 
-Copyright (c) 2013 Riaan Hanekom
+Original source: Swticheroo - Copyright (c) 2013 Riaan Hanekom
+Isici version: Copyright (c) 2020 Filip Stas
+
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,6 +26,7 @@ THE SOFTWARE.
 
 using System;
 using System.Collections.Generic;
+using Isici.Core.Abstractions.Configuration;
 
 namespace Isici.Core.Abstractions
 {
@@ -66,7 +69,7 @@ namespace Isici.Core.Abstractions
         /// Initializes the this configuration using the specified configuration action.
         /// </summary>
         /// <param name="configuration">The source of configuration.</param>
-        void Initialize(Action<IConfigurationExpression> configuration);
+        void Initialize(Action<IConfigurationExpression> configuration, IConfigurationReader configurationReader);
 
         /// <summary>
         /// Diagnostics on what's currently contained in this configuration instance.

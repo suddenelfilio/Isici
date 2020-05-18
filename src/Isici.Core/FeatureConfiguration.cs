@@ -25,9 +25,12 @@ THE SOFTWARE.
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using Isici.Core.Abstractions;
+using Isici.Core.Abstractions.Configuration;
 
-namespace Switcheroo.Core
+namespace Isici.Core
 {
     /// <summary>
     /// A concrete implementation of a <see cref="IFeatureConfiguration"/>.  This configuration stores
@@ -66,8 +69,8 @@ namespace Switcheroo.Core
         public void Add(IFeatureToggle toggle)
         {
             if (toggle == null)
-            { 
-                throw new ArgumentNullException("toggle");
+            {
+                throw new ArgumentNullException(nameof(toggle));
             }
 
             toggle.AssertConfigurationIsValid();
@@ -86,7 +89,7 @@ namespace Switcheroo.Core
         {
             if (toggleName == null)
             {
-                throw new ArgumentNullException("toggleName");
+                throw new ArgumentNullException(nameof(toggleName));
             }
 
             IFeatureToggle toggle;
@@ -105,15 +108,15 @@ namespace Switcheroo.Core
         /// Initializes the this configuration using the specified configuration action.
         /// </summary>
         /// <param name="configuration">The source of configuration.</param>
-        public void Initialize(Action<IConfigurationExpression> configuration)
+        public void Initialize(Action<IConfigurationExpression> configuration, IConfigurationReader configurationReader)
         {
             if (configuration == null)
             {
-                throw new ArgumentNullException("configuration");
+                throw new ArgumentNullException(nameof(configuration));
             }
 
             features.Clear();
-            var expression = new ConfigurationExpression(this);
+            var expression = new ConfigurationExpression(this, configurationReader);
             configuration(expression);
         }
 
@@ -126,7 +129,7 @@ namespace Switcheroo.Core
         public string WhatDoIHave()
         {
             var sb = new StringBuilder();
-            
+
             foreach (var instance in this.OrderBy(x => x.Name))
             {
                 sb.AppendLine(instance.ToString());

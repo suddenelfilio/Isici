@@ -23,8 +23,10 @@ THE SOFTWARE.
 */
 
 using System;
+using Isici.Core.Abstractions;
+using Isici.Core.Abstractions.Toggles;
 
-namespace Switcheroo.Core.Toggles
+namespace Isici.Core.Toggles
 {
     /// <summary>
     /// A locator strategy to find a feature toggle by name.

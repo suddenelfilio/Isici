@@ -23,6 +23,7 @@ THE SOFTWARE.
 */
 
 using System;
+using System.Configuration;
 
 namespace Isici.Configuration.SystemConfiguration
 {

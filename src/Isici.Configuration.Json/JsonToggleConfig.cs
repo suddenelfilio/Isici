@@ -1,11 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using Newtonsoft.Json;
 
-namespace Switcheroo.JsonFileConfigurationReader
+namespace Isici.Configuration.JsonFileConfiguration
 {
     public class JsonToggleConfig
     {
@@ -13,7 +9,7 @@ namespace Switcheroo.JsonFileConfigurationReader
         /// Gets or sets the name of the feature toggle.
         /// </summary>
         /// <value>
-        /// The name of th efeature toggle.
+        /// The name of the feature toggle.
         /// </value>
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -61,6 +57,7 @@ namespace Switcheroo.JsonFileConfigurationReader
         /// The dependencies.
         /// </value>
         [JsonProperty("dependencies")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "<Pending>")]
         public string[] Dependencies { get; set; }
     }
 }

@@ -25,10 +25,12 @@ THE SOFTWARE.
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using Switcheroo.Core.Collections;
-using Switcheroo.Core.Exceptions;
+using Isici.Core.Abstractions;
+using Isici.Core.Abstractions.Toggles;
+using Isici.Core.Collections;
+using Isici.Core.Exceptions;
 
-namespace Switcheroo.Core.Toggles
+namespace Isici.Core.Toggles
 {
     /// <summary>
     /// A toggle that has other feature toggles as dependencies.

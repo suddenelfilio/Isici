@@ -25,7 +25,7 @@ THE SOFTWARE.
 using System;
 using System.Text;
 
-namespace Switcheroo.Core.Toggles
+namespace Isici.Core.Toggles
 {
     /// <summary>
     /// A feature toggle that turns on within a specific date range.

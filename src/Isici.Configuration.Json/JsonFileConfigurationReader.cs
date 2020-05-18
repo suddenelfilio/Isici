@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using Isici.Core.Abstractions;
+using Isici.Core.Abstractions.Configuration;
+using Isici.Core.Toggles;
 using Newtonsoft.Json;
-using Switcheroo.Configuration;
-using Switcheroo.Toggles;
 
-namespace Switcheroo.JsonFileConfigurationReader
+namespace Isici.Configuration.JsonFileConfiguration
 {
     public class JsonFileConfigurationReader : IConfigurationReader
     {
