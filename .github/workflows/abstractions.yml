@@ -61,6 +61,6 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Pack Package
-      run: dotnet pack src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj -p:PackageVersion=${{SemVer}} --configuration Release 
+      run: dotnet pack src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj -p:PackageVersion=${{ steps.gitversion.outputs.semVer }} --configuration Release 
     - name: Push package
       run: dotnet nuget push src\Isici.Core.Abstractions\**\*.nupkg --api-key ${{ secrets.NUGET_API_KEY }}
