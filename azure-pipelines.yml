@@ -11,32 +11,36 @@ trigger:
     include:
     - src/Isici.Core.Abstractions
 
-pool:
-  vmImage: 'ubuntu-latest'
+stages:
+- stage: Abstractions Build
+  jobs:
+  - job: Abstractions
+    pool:
+      vmImage: 'ubuntu-latest'
 
-variables:
-  buildConfiguration: 'Release'
-  project: 'src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj'
+    variables:
+      buildConfiguration: 'Release'
+      project: 'src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj'
 
-steps:
-- task: DotNetCoreCLI@2
-  displayName: "Build Library"
-  inputs:
-    command: 'build'
-    arguments: '--configuration $(buildConfiguration)'
-    projects: $(project)
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: "Build Library"
+      inputs:
+        command: 'build'
+        arguments: '--configuration $(buildConfiguration)'
+        projects: $(project)
 
-- task: DotNetCoreCLI@2
-  displayName: "Pack library"
-  inputs:
-    command: 'pack'
-    packagesToPack: '$(project)'
-    packDirectory: '$(Build.ArtifactStagingDirectory)'
-    nobuild: true
-    versioningScheme: 'off'
+    - task: DotNetCoreCLI@2
+      displayName: "Pack library"
+      inputs:
+        command: 'pack'
+        packagesToPack: '$(project)'
+        packDirectory: '$(Build.ArtifactStagingDirectory)'
+        nobuild: true
+        versioningScheme: 'off'
 
-- task: PublishBuildArtifacts@1
-  displayName: "Upload artifact"
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: nugetpkg
+    - task: PublishBuildArtifacts@1
+      displayName: "Upload artifact"
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: nugetpkg
