@@ -16,10 +16,27 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  project: 'src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj'
 
 steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: 'src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj'
-    configuration: $buildConfiguration
+    projects: $(project)
+    configuration: $(buildConfiguration)
+
+
+- task: DotNetCoreCLI@2
+  displayName: "Pack library"
+  inputs:
+    command: 'pack'
+    packagesToPack: '$(project)'
+    packDirectory: '$(Build.ArtifactStagingDirectory)'
+    nobuild: true
+    versioningScheme: 'off'
+
+- task: PublishBuildArtifacts@1
+  displayName: "Upload artifact"
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: nugetpkg
