@@ -23,7 +23,7 @@ jobs:
       with:
         updateAssemblyInfo: false
         useConfigFile: true
-        configFilePath: 'src/Isici.Core.JsonFileConfiguration/GitVersion.yml'
+        configFilePath: 'src/Isici.Configuration.JsonFileConfiguration/GitVersion.yml'
     - run: |
         echo "Major: ${{ steps.gitversion.outputs.major }}"
         echo "Minor: ${{ steps.gitversion.outputs.minor }}"
@@ -62,9 +62,9 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build src/Isici.Core.JsonFileConfiguration/Isici.Core.JsonFileConfiguration.csproj --configuration Release
+      run: dotnet build src/Isici.Configuration.JsonFileConfiguration/Isici.Configuration.JsonFileConfiguration.csproj --configuration Release
     - name: Pack Package
-      run: dotnet pack src/Isici.Core.JsonFileConfiguration/Isici.Core.JsonFileConfiguration.csproj -p:PackageVersion=${{ steps.gitversion.outputs.semVer }} --configuration Release 
+      run: dotnet pack src/Isici.Configuration.JsonFileConfiguration/Isici.Configuration.JsonFileConfiguration.csproj -p:PackageVersion=${{ steps.gitversion.outputs.semVer }} --configuration Release 
     - name: Push package
-      run: dotnet nuget push src/Isici.Core.JsonFileConfiguration/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push src/Isici.Configuration.JsonFileConfiguration/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
     
