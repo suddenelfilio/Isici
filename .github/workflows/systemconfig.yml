@@ -64,7 +64,7 @@ jobs:
     - name: Build
       run: dotnet build src/Isici.Configuration.SystemConfiguration/Isici.Configuration.SystemConfiguration.csproj --configuration Release
     - name: Pack Package
-      run: dotnet pack src/Isici.Configuration.SystemConfiguration/Isici.Configuration.SystemConfiguration.csproj -p:PackageVersion=${{ steps.gitversion.outputs.semVer }} --configuration Release 
+      run: dotnet pack src/Isici.Configuration.SystemConfiguration/Isici.Configuration.SystemConfiguration.csproj /p:Version=${{ steps.gitversion.outputs.semVer }} --configuration Release
     - name: Push package
       run: dotnet nuget push src/Isici.Configuration.SystemConfiguration/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
   

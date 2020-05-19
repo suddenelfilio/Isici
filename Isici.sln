@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isici.Core", "src\Isici.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isici.Configuration.SystemConfiguration", "src\Isici.Configuration.SystemConfiguration\Isici.Configuration.SystemConfiguration.csproj", "{CEAD9520-F519-4CC8-82AD-F60B2A94C9BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isici.Configuration.JsonFileConfiguration", "src\Isici.Configuration.Json\Isici.Configuration.JsonFileConfiguration.csproj", "{63A9E584-9DB6-49C5-9287-082F68BD0B1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isici.Configuration.JsonFileConfiguration", "src\Isici.Configuration.JsonFileConfiguration\Isici.Configuration.JsonFileConfiguration.csproj", "{F476ABC6-E3D2-46BF-BF3F-C5B31B5BC2B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{CEAD9520-F519-4CC8-82AD-F60B2A94C9BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEAD9520-F519-4CC8-82AD-F60B2A94C9BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEAD9520-F519-4CC8-82AD-F60B2A94C9BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{63A9E584-9DB6-49C5-9287-082F68BD0B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63A9E584-9DB6-49C5-9287-082F68BD0B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63A9E584-9DB6-49C5-9287-082F68BD0B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63A9E584-9DB6-49C5-9287-082F68BD0B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F476ABC6-E3D2-46BF-BF3F-C5B31B5BC2B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F476ABC6-E3D2-46BF-BF3F-C5B31B5BC2B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F476ABC6-E3D2-46BF-BF3F-C5B31B5BC2B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F476ABC6-E3D2-46BF-BF3F-C5B31B5BC2B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
