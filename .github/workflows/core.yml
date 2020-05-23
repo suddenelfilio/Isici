@@ -62,5 +62,5 @@ jobs:
     - name: Pack Package
       run: dotnet pack src/Isici.Core/Isici.Core.csproj -p:PackageVersion=${{ steps.gitversion.outputs.semVer }} /p:Version=${{ steps.gitversion.outputs.semVer }} --configuration Release
     - name: Push package
-      run: dotnet nuget push src/Isici.Core/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push src/Isici.Core/bin/Release/Isici.Core.${{ steps.gitversion.outputs.semVer }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
     
