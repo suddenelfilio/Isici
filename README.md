@@ -15,6 +15,18 @@ Isici can be installed via [Nuget](http://nuget.org/packages/Isici.Core).
 > Install-Package Isici.Core 
 ```
 
+```powershell
+> dotnet add package Isici.Core
+```
+
+```xml
+<PackageReference Include="Isici.Core" Version="1.1.1" />
+```
+
+```powershell
+> paket add Isici.Core
+```
+
 License
 --------
 
