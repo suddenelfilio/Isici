@@ -16,4 +16,4 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj /p:Version=${{ steps.gitversion.outputs.semVer }} --configuration Release 
+      run: dotnet build src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj  --configuration Release 
