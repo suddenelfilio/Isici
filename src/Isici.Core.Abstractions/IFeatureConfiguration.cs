@@ -65,13 +65,6 @@ namespace Isici.Core.Abstractions
         void Clear();
 
         /// <summary>
-        /// Initializes the this configuration using the specified configuration action.
-        /// </summary>
-        /// <param name="configuration">The source of configuration.</param>
-        /// <param name="configurationReader">The configuration reader.</param>
-        void Initialize(Action<IConfigurationExpression> configuration, IConfigurationReader configurationReader);
-
-        /// <summary>
         /// Diagnostics on what's currently contained in this configuration instance.
         /// </summary>
         /// <returns>A descriptive string on feature toggles contained in this instance.</returns>

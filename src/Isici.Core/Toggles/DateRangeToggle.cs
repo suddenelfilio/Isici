@@ -48,9 +48,9 @@ namespace Isici.Core.Toggles
             DateTime? enabledToDate) 
             : base(name, enabled)
         {
-            if ((enabledFromDate == null) && (enabledToDate == null))
+            if (enabledFromDate == null && enabledToDate == null)
             {
-                throw new ArgumentException("At least one date neeeds to be specified for this feature toggle.");
+                throw new ArgumentException("At least one date needs to be specified for this feature toggle.");
             }
 
             EnabledFromDate = enabledFromDate;
@@ -69,17 +69,12 @@ namespace Isici.Core.Toggles
         {
             DateTime now = DateTime.Now;
 
-            if ((EnabledFromDate != null) && (now < EnabledFromDate))
+            if (EnabledFromDate != null && now < EnabledFromDate)
             {
                 return false;
             }
 
-            if ((EnabledToDate != null) && (now > EnabledToDate))
-            {
-                return false;
-            }
-
-            return true;
+            return EnabledToDate == null || !(now > EnabledToDate);
         }
 
         #endregion
@@ -121,7 +116,7 @@ namespace Isici.Core.Toggles
         /// <value>
         /// The date that this feature toggle is enabled from.
         /// </value>
-        public DateTime? EnabledFromDate { get; private set; }
+        public DateTime? EnabledFromDate { get; }
 
 
         /// <summary>
@@ -130,7 +125,7 @@ namespace Isici.Core.Toggles
         /// <value>
         /// The date that this feature toggle is enabled until.
         /// </value>
-        public DateTime? EnabledToDate { get; private set; }
+        public DateTime? EnabledToDate { get; }
 
         #endregion
     }

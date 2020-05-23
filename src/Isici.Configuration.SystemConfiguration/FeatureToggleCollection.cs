@@ -38,10 +38,7 @@ namespace Isici.Configuration.SystemConfiguration
         /// <returns>The configuration at the specified index.</returns>
         public ToggleConfig this[int index]
         {
-            get
-            {
-                return (ToggleConfig)BaseGet(index);
-            }
+            get => (ToggleConfig)BaseGet(index);
 
             set
             {

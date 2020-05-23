@@ -25,7 +25,7 @@ THE SOFTWARE.
 using System;
 using System.Runtime.Serialization;
 
-namespace Isici.Core.Toggles
+namespace Isici.Core.Exceptions
 {
     /// <summary>
     /// An exception that occurs when an established feature is queried.

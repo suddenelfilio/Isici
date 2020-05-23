@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 using System.Linq;
 using Isici.Core.Abstractions;
 using Isici.Core.Abstractions.Configuration;
+using Isici.Core.Exceptions;
 using Isici.Core.Toggles;
 using Newtonsoft.Json;
 
@@ -62,7 +62,7 @@ namespace Isici.Configuration.JsonFileConfiguration
 
                 if (!toggles.TryGetValue(cleanName, out var dependency))
                 {
-                    throw new ConfigurationErrorsException("Could not find dependency with name \"" + cleanName + "\".");
+                    throw new InvalidConfigurationException($"Could not find dependency with name \"{cleanName}\".");
                 }
 
                 dependencyToggle.AddDependency(dependency.Value);

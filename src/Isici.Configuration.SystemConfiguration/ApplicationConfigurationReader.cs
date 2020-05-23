@@ -57,7 +57,7 @@ namespace Isici.Configuration.SystemConfiguration
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationConfigurationReader" /> class.
         /// </summary>
-        /// <param name="reader">A function that retrieves the confiration section that needs to be read.</param>
+        /// <param name="reader">A function that retrieves the configuration section that needs to be read.</param>
         public ApplicationConfigurationReader(Func<IFeatureToggleConfiguration> reader)
         {
             this.reader = reader;
@@ -102,9 +102,7 @@ namespace Isici.Configuration.SystemConfiguration
                 ToggleConfig config = t.Value.Key;
                 IFeatureToggle toggle = t.Value.Value;
 
-                var dependencyToggle = toggle as DependencyToggle;
-                
-                if (dependencyToggle != null)
+                if (toggle is DependencyToggle dependencyToggle)
                 {
                     var dependencyNames = config.Dependencies.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                     BuildDependencies(dependencyToggle, toggles, dependencyNames);
@@ -119,9 +117,8 @@ namespace Isici.Configuration.SystemConfiguration
             foreach (var dependencyName in dependencyNames)
             {
                 string cleanName = dependencyName.Trim();
-                KeyValuePair<ToggleConfig, IFeatureToggle> dependency;
 
-                if (!toggles.TryGetValue(cleanName, out dependency))
+                if (!toggles.TryGetValue(cleanName, out var dependency))
                 {
                     throw new ConfigurationErrorsException("Could not find dependency with name \"" + cleanName + "\".");
                 }

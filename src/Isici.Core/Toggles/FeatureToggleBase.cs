@@ -43,12 +43,7 @@ namespace Isici.Core.Toggles
         /// <exception cref="System.ArgumentNullException">If name is <c>null</c>.</exception>
         protected FeatureToggleBase(string name)
         {
-            if (name == null)
-            {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            Name = name;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
         }
 
         #endregion
@@ -61,7 +56,7 @@ namespace Isici.Core.Toggles
         /// <value>
         /// The name of the feature toggle.
         /// </value>
-        public string Name { get; private set; }
+        public string Name { get; }
 
         /// <summary>
         /// Determines whether this feature toggle instance is enabled.
@@ -72,7 +67,7 @@ namespace Isici.Core.Toggles
         public abstract bool IsEnabled();
 
         /// <summary>
-        /// Asserts that the configuration of this feautre toggle is valid.
+        /// Asserts that the configuration of this feature toggle is valid.
         /// </summary>
         public virtual void AssertConfigurationIsValid()
         {
@@ -131,7 +126,7 @@ namespace Isici.Core.Toggles
             name = name.PrepareForDisplay(maxLength, true);
             value = value.PrepareForDisplay(maxLength, false);
 
-            return string.Format("{0}\t{1}", name, value);
+            return $"{name}\t{value}";
         }
 
         /// <summary>
