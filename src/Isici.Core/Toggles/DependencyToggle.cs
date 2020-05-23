@@ -82,13 +82,14 @@ namespace Isici.Core.Toggles
         }
 
         /// <summary>
-        /// Asserts that the configuration of this feautre toggle is valid.
+        /// Asserts that the configuration of this feature toggle is valid.
         /// </summary>
         public override void AssertConfigurationIsValid()
         {
             if (HasCycle())
             {
-                throw new CircularDependencyException(string.Format("Circular dependency found for toggle {0} - will not be able to evaluate this toggle.", Name));
+                throw new CircularDependencyException(
+                    $"Circular dependency found for toggle {Name} - will not be able to evaluate this toggle.");
             }
         }
 
@@ -134,10 +135,7 @@ namespace Isici.Core.Toggles
         /// <value>
         /// The dependencies of this feature toggle.
         /// </value>
-        public IEnumerable<IFeatureToggle> Dependencies
-        {
-            get { return dependencies; }
-        }
+        public IEnumerable<IFeatureToggle> Dependencies => dependencies;
 
         #endregion
 
@@ -157,9 +155,7 @@ namespace Isici.Core.Toggles
                     return true;
                 }
 
-                var dependencyToggle = toggle as DependencyToggle;
-
-                if ((dependencyToggle != null) && dependencyToggle.HasCycle(visitedToggles))
+                if ((toggle is DependencyToggle dependencyToggle) && dependencyToggle.HasCycle(visitedToggles))
                 {
                     return true;
                 }

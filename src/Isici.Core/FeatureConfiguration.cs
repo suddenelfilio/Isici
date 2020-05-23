@@ -39,6 +39,8 @@ namespace Isici.Core
     /// </summary>
     public class FeatureConfiguration : IFeatureConfiguration
     {
+        private readonly IConfigurationReader reader;
+
         #region Globals
 
         private readonly ConcurrentDictionary<string, IFeatureToggle> features = new ConcurrentDictionary<string, IFeatureToggle>();
@@ -53,12 +55,20 @@ namespace Isici.Core
         /// <value>
         /// The count of feature toggles.
         /// </value>
-        public int Count
-        {
-            get { return features.Count; }
-        }
+        public int Count => features.Count;
 
         #endregion
+
+        public FeatureConfiguration(IEnumerable<IFeatureToggle> toggles)
+        {
+            AddItems(toggles);
+        }
+
+        public FeatureConfiguration(IConfigurationReader reader)
+        {
+            this.reader = reader;
+            AddItems(reader.GetFeatures());
+        }
 
         #region IFeatureConfiguration Members
 
@@ -93,8 +103,7 @@ namespace Isici.Core
                 throw new ArgumentNullException(nameof(toggleName));
             }
 
-            IFeatureToggle toggle;
-            return features.TryGetValue(toggleName, out toggle) ? toggle : null;
+            return features.TryGetValue(toggleName, out var toggle) ? toggle : null;
         }
 
         /// <summary>
@@ -103,22 +112,6 @@ namespace Isici.Core
         public void Clear()
         {
             features.Clear();
-        }
-
-        /// <summary>
-        /// Initializes the this configuration using the specified configuration action.
-        /// </summary>
-        /// <param name="configuration">The source of configuration.</param>
-        public void Initialize(Action<IConfigurationExpression> configuration, IConfigurationReader configurationReader)
-        {
-            if (configuration == null)
-            {
-                throw new ArgumentNullException(nameof(configuration));
-            }
-
-            features.Clear();
-            var expression = new ConfigurationExpression(this, configurationReader);
-            configuration(expression);
         }
 
         /// <summary>
@@ -183,5 +176,20 @@ namespace Isici.Core
         }
 
         #endregion
+
+        private void AddItems(IEnumerable<IFeatureToggle> items)
+        {
+            features.Clear();
+
+            if (items == null)
+            {
+                return;
+            }
+
+            foreach (var item in items)
+            {
+                Add(item);
+            }
+        }
     }
 }

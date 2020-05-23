@@ -37,13 +37,13 @@ namespace Isici.Configuration.SystemConfiguration
         /// Gets or sets the name of the feature toggle.
         /// </summary>
         /// <value>
-        /// The name of th efeature toggle.
+        /// The name of the feature toggle.
         /// </value>
         [ConfigurationProperty("name", IsRequired = true, IsKey = true)]
         public string Name
         {
-            get { return (string)this["name"]; }
-            set { this["name"] = value; }
+            get => (string)this["name"];
+            set => this["name"] = value;
         }
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace Isici.Configuration.SystemConfiguration
         [ConfigurationProperty("enabled", IsRequired = false, DefaultValue = false, IsKey = false)]
         public bool Enabled
         {
-            get { return (bool)this["enabled"]; }
-            set { this["enabled"] = value; }
+            get => (bool)this["enabled"];
+            set => this["enabled"] = value;
         }
 
         /// <summary>
@@ -68,8 +68,8 @@ namespace Isici.Configuration.SystemConfiguration
         [ConfigurationProperty("established", IsRequired = false, DefaultValue = false, IsKey = false)]
         public bool IsEstablished
         {
-            get { return (bool)this["established"]; }
-            set { this["established"] = value; }
+            get => (bool)this["established"];
+            set => this["established"] = value;
         }
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace Isici.Configuration.SystemConfiguration
         [ConfigurationProperty("from", IsRequired = false, DefaultValue = null, IsKey = false)]
         public DateTime? FromDate
         {
-            get { return (DateTime?)this["from"]; }
-            set { this["from"] = value; }
+            get => (DateTime?)this["from"];
+            set => this["from"] = value;
         }
 
         /// <summary>
@@ -94,8 +94,8 @@ namespace Isici.Configuration.SystemConfiguration
         [ConfigurationProperty("until", IsRequired = false, DefaultValue = null, IsKey = false)]
         public DateTime? ToDate
         {
-            get { return (DateTime?)this["until"]; }
-            set { this["until"] = value; }
+            get => (DateTime?)this["until"];
+            set => this["until"] = value;
         }
 
         /// <summary>
@@ -107,8 +107,8 @@ namespace Isici.Configuration.SystemConfiguration
         [ConfigurationProperty("dependencies", IsRequired = false, DefaultValue = null, IsKey = false)]
         public string Dependencies
         {
-            get { return (string)this["dependencies"]; }
-            set { this["dependencies"] = value; }
+            get => (string)this["dependencies"];
+            set => this["dependencies"] = value;
         }
 
     }
