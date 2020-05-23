@@ -1,7 +1,7 @@
 ﻿/*
 The MIT License
 
-Original source: Swticheroo - Copyright (c) 2013 Riaan Hanekom
+Original source: Switcheroo - Copyright (c) 2013 Riaan Hanekom
 Isici version: Copyright (c) 2020 Filip Stas
 
 
