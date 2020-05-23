@@ -66,4 +66,4 @@ jobs:
     - name: Pack Package
       run: dotnet pack src/Isici.Core.Abstractions/Isici.Core.Abstractions.csproj /p:Version=${{ steps.gitversion.outputs.semVer }} --configuration Release
     - name: Push package
-      run: dotnet nuget push src/Isici.Core.Abstractions/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push src/Isici.Core.Abstractions/bin/Release/Isici.Core.Abstractions.${{ steps.gitversion.outputs.semVer }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
