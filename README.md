@@ -1,6 +1,8 @@
 Isici - successor of Switcheroo
 ==========
 
+> Isici is **Feature** in [Zulu](https://translate.google.be/#view=home&op=translate&sl=auto&tl=zu&text=feature)
+
 A lightweight framework for [feature toggling](http://martinfowler.com/bliki/FeatureToggle.html) to enable trunk based development.
 Isici aims for simplicity, with a clean syntax and a minimal feature set while not compromising on extensibility and testability.
 
