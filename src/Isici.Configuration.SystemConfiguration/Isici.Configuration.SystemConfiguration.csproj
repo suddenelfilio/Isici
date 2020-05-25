@@ -10,24 +10,25 @@
     <Company>Visuasoft</Company>
     <Product>Isici Feature Flags</Product>
   </PropertyGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
   </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
-    <PackageReference Include="Isici.Core.Abstractions" Version="1.1.1" />
-    <PackageReference Include="Isici.Core" Version="1.1.2"  />
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+
+  <ItemGroup>
     <ProjectReference Include="..\Isici.Core.Abstractions\Isici.Core.Abstractions.csproj" />
     <ProjectReference Include="..\Isici.Core\Isici.Core.csproj" />
   </ItemGroup>
+
   <ItemGroup>
     <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
     <Reference Include="System.Configuration" />
   </ItemGroup>
+
 </Project>

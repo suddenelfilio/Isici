@@ -11,23 +11,23 @@
     <PackageProjectUrl>https://github.com/suddenelfilio/Isici</PackageProjectUrl>
     <RepositoryUrl>https://github.com/suddenelfilio/Isici</RepositoryUrl>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.*" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
-    <PackageReference Include="Isici.Core.Abstractions" Version="1.1.1" />
-    <PackageReference Include="Isici.Core" Version="1.1.2"  />
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+
+  <ItemGroup>
     <ProjectReference Include="..\Isici.Core.Abstractions\Isici.Core.Abstractions.csproj" />
     <ProjectReference Include="..\Isici.Core\Isici.Core.csproj" />
   </ItemGroup>
+
   <ItemGroup>
     <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
+
 </Project>
