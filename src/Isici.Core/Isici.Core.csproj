@@ -13,7 +13,11 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
-  <ItemGroup Condition="">
+  <ItemGroup Condition="'$(Configuration)'=='Release'">
+    <PackageReference Include="Isici.Core.Abstractions" Version="1.1.1" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(Configuration)'=='Debug'">
     <ProjectReference Include="..\Isici.Core.Abstractions\Isici.Core.Abstractions.csproj" />
   </ItemGroup>
 
